@@ -16,7 +16,7 @@ Arborescence :
 <img width="899" height="400" alt="image" src="https://github.com/user-attachments/assets/fe76431a-62f0-4828-9806-9cd3854fa269" />
 
 ## 📝 2. Rapport succinct
-🧩 Difficultés rencontrées et solutions apportées
+### 🧩 Difficultés rencontrées et solutions apportées
 1️⃣ Problème : Le site affichait la page par défaut de NGINX
 
 Cause : Le fichier principal n’était pas nommé index.html.
@@ -33,7 +33,7 @@ Solution : Mise à jour du script et correction de l’arborescence du dossier s
 Cause : Certains fichiers n’avaient pas été ajoutés/committés correctement, ce qui provoquait des erreurs dans la CI qui s’attendait à une structure spécifique.
 Solution : Réorganisation complète du dépôt + commits propres pour aligner la structure locale avec celle analysée par le pipeline GitHub Actions.
 
-📸 Preuves du fonctionnement
+### 📸 Preuves du fonctionnement
 ✔️ Dockerfile
 
 Création de l’image devops-site
