@@ -15,48 +15,43 @@ Arborescence :
 
 <img width="899" height="400" alt="image" src="https://github.com/user-attachments/assets/fe76431a-62f0-4828-9806-9cd3854fa269" />
 
-📝 Rapport succinct:
- Difficultés rencontrées :
+📝 Rapport succinct
+🧩 Difficultés rencontrées et solutions apportées
 1️⃣ Problème : Le site affichait la page par défaut de NGINX
 
 Cause : Le fichier principal n’était pas nommé index.html.
-
+Conséquence : NGINX ne trouvait pas de point d’entrée et affichait sa page par défaut.
 Solution : Renommage du fichier EcommerceWebsite.html → index.html.
 
-2️⃣ Problème : Tests qui échouaient dans le CI
+2️⃣ Problème : Tests échoués dans le pipeline CI/CD
 
-Cause : Le script test -f src/EcommerceWebsite.html ne trouvait rien.
+Cause : Le script test -f src/EcommerceWebsite.html ne trouvait aucun fichier après le renommage.
+Solution : Mise à jour du script et correction de l’arborescence du dossier src pour correspondre à la nouvelle structure du projet.
 
-Solution : Correction de l’arborescence et du nom du fichier.
+3️⃣ Problème : Incohérences entre l’arborescence locale et celle du dépôt GitHub
 
-3️⃣ Problème : Erreurs “favicon.ico not found” dans NGINX
+Cause : Certains fichiers n’avaient pas été ajoutés/committés correctement, ce qui provoquait des erreurs dans la CI qui s’attendait à une structure spécifique.
+Solution : Réorganisation complète du dépôt + commits propres pour aligner la structure locale avec celle analysée par le pipeline GitHub Actions.
 
-Cause : NGINX tente de charger un favicon inexistant.
+📸 Preuves du fonctionnement
+✔️ Dockerfile
 
-Solution : Erreur bénigne → ignorée.
-
-Preuves du fonctionnement:
--Dockerfile:
---creation de l'image devops-site
-
+Création de l’image devops-site
 <img width="1280" height="420" alt="image" src="https://github.com/user-attachments/assets/c05f6303-48f9-4c76-b333-fc63484334b5" />
 
---contenarization du site coin blanc (creation d'une instance encours dexecution de l'image devops-site)
-
+Conteneurisation du site Coin Blanc
 <img width="1280" height="479" alt="image" src="https://github.com/user-attachments/assets/5bd66493-a64f-4ac6-b68a-d0a41e9604e2" />
 
---phase creation et execution du conteneur 
-
+Création et exécution du conteneur
 <img width="1280" height="719" alt="image" src="https://github.com/user-attachments/assets/90b46d1f-8360-43c5-842a-c5ee2c905465" />
 
--Fichier CI/CD (devops.yml)
---preuve du bon deroulement
+✔️ Pipeline CI/CD (devops.yml)
 
+Preuve du bon déroulement du workflow GitHub Actions
 <img width="1280" height="638" alt="image" src="https://github.com/user-attachments/assets/8317427e-8087-4f7d-8b1c-b0ed17add487" />
 <img width="1280" height="490" alt="image" src="https://github.com/user-attachments/assets/e70f0188-7cc0-44ae-a46d-e66cacb2cc08" />
 
+✔️ Test de portabilité du site
 
--tester la portabiliter du site:
-
+Affichage correct du site dans un navigateur via le conteneur
 <img width="1280" height="683" alt="image" src="https://github.com/user-attachments/assets/0ff37594-260c-40af-818e-51938cc35a38" />
-
