@@ -37,21 +37,26 @@ Solution : Réorganisation complète du dépôt + commits propres pour aligner l
 ✔️ Dockerfile
 
 Création de l’image devops-site
+
 <img width="1280" height="420" alt="image" src="https://github.com/user-attachments/assets/c05f6303-48f9-4c76-b333-fc63484334b5" />
 
 Conteneurisation du site Coin Blanc
+
 <img width="1280" height="479" alt="image" src="https://github.com/user-attachments/assets/5bd66493-a64f-4ac6-b68a-d0a41e9604e2" />
 
 Création et exécution du conteneur
+
 <img width="1280" height="719" alt="image" src="https://github.com/user-attachments/assets/90b46d1f-8360-43c5-842a-c5ee2c905465" />
 
 ✔️ Pipeline CI/CD (devops.yml)
 
 Preuve du bon déroulement du workflow GitHub Actions
+
 <img width="1280" height="638" alt="image" src="https://github.com/user-attachments/assets/8317427e-8087-4f7d-8b1c-b0ed17add487" />
 <img width="1280" height="490" alt="image" src="https://github.com/user-attachments/assets/e70f0188-7cc0-44ae-a46d-e66cacb2cc08" />
 
 ✔️ Test de portabilité du site
 
 Affichage correct du site dans un navigateur via le conteneur
+
 <img width="1280" height="683" alt="image" src="https://github.com/user-attachments/assets/0ff37594-260c-40af-818e-51938cc35a38" />
