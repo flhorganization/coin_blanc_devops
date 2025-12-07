@@ -19,14 +19,15 @@ Arborescence :
 ### 🧩 Difficultés rencontrées et solutions apportées
 1️⃣ Problème : Le site affichait la page par défaut de NGINX
 
-Cause : Le fichier principal n’était pas nommé index.html.
+Cause :  Le fichier principal du site web n’était pas nommé index.html, qui est le point d’entrée par défaut attendu par NGINX. En l’absence de ce fichier, le serveur suppose que le site n’est pas correctement configuré et affiche automatiquement sa page par défaut.
 Conséquence : NGINX ne trouvait pas de point d’entrée et affichait sa page par défaut.
 Solution : Renommage du fichier EcommerceWebsite.html → index.html.
 
 2️⃣ Problème : Tests échoués dans le pipeline CI/CD
 
 Cause : Le script test -f src/EcommerceWebsite.html ne trouvait aucun fichier après le renommage.
-Solution : Mise à jour du script et correction de l’arborescence du dossier src pour correspondre à la nouvelle structure du projet.
+Conséquence : Le déploiement était bloqué et GitHub Actions indiquait des erreurs liées aux tests.
+Solution :Mettre à jour le script de test pour qu’il vérifie le fichier désormais nommé index.html, puis réorganiser le dossier src pour assurer que sa structure corresponde aux attentes du pipeline CI/CD.
 
 3️⃣ Problème : Incohérences entre l’arborescence locale et celle du dépôt GitHub
 
