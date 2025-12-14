@@ -8,7 +8,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
       - name: Build Docker image
         run: docker build -t devops-site .
 
@@ -16,13 +18,20 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - uses: actions/checkout@v3
-      - name: Test index.html exists
-        run: test -f src/index.html
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Check main pages exist
+        run: |
+          test -f src/index.html
+          test -f src/AboutUs.html
+          test -f src/shop.html
+          test -f src/cart.html
+          test -f src/contact.me.html
 
   deploy:
     runs-on: ubuntu-latest
     needs: test
     steps:
       - name: Deploy
-        run: echo "Deploy step done"
+        run: echo "Deployment successful (placeholder)"
